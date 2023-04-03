@@ -1,0 +1,120 @@
+#file: windows.cpp; lines: after comment "windows settings"
+//colors
+/*float first_color1 = FIRST_COLOR;
+float second_color1 = SECOND_COLOR;
+float first_color2 = SECOND_COLOR;
+float second_color2 = FIRST_COLOR;*/
+////flags
+//bool color_change_flag = true;
+//bool dino_jump_flag = true;
+////clocks
+//sf::Clock dino_animation_clock;
+//sf::Clock dino_jump_clock;
+//sf::Clock sand_animation_clock;
+//sf::Clock scores_add_clock;
+//sf::Clock measuring_framerate_time_clock;
+////sounds
+//sf::SoundBuffer jump_sound_buffer;
+//if (!jump_sound_buffer.loadFromFile("audio\\jump.ogg"))
+//	return -1;
+//sf::Sound jump_sound;
+//jump_sound.setBuffer(jump_sound_buffer);
+//sf::SoundBuffer fail_sound_buffer;
+//if (!fail_sound_buffer.loadFromFile("audio\\fail.ogg"))
+//	return -1;
+//sf::Sound fail_sound;
+//fail_sound.setBuffer(fail_sound_buffer);
+////other variables
+//unsigned int help_counter_for_changing_colors = 1;
+//double measuring_framerate_time = 1/60*pow(10,3);
+//
+#file: windows.cpp; lines: before end of function "playground":
+//while (true) {
+		//	measuring_framerate_time_clock.restart();
+		//	sf::Event event;
+		//	while (window->pollEvent(event)) { //event loop
+		//		switch (event.type) {
+		//		case sf::Event::EventType::KeyPressed:
+		//			if (event.key.code == sf::Keyboard::Key::Q)
+		//				return false;
+		//			if (event.key.code == sf::Keyboard::Key::M)
+		//				return true;
+		//			if (event.key.code == sf::Keyboard::Key::Up && dino_jump_flag) {
+		//				jump_sound.play();
+		//				dino_jump_flag = false;
+		//			}
+		//			if (event.key.code == sf::Keyboard::Key::Left)
+		//				window->setFramerateLimit(30);
+		//			if (event.key.code == sf::Keyboard::Key::Right)
+		//				window->setFramerateLimit(0);
+
+		//			break;
+		//		}
+		//	}
+		//	//animations
+		//	if (sand_animation_clock.getElapsedTime().asMicroseconds() >= 1000.0f) {
+		//		if (measuring_framerate_time > 1000.0f) {
+		//			sand_animation_clock.restart();
+		//			for (int i = 0; i < measuring_framerate_time / 1000.0f; i++) {
+		//				win->get_sand().move();
+		//				win->move_cactuses();
+		//			}
+		//		}
+		//		else {
+		//			sand_animation_clock.restart();
+		//			win->get_sand().move();
+		//			win->move_cactuses();
+		//		}
+		//	}
+		//	if (dino_animation_clock.getElapsedTime().asMicroseconds() >= 200000.0f&&dino_jump_flag) {
+		//		if (measuring_framerate_time > 200000.0f) {
+		//			dino_animation_clock.restart();
+		//			for (int i = 0; i < measuring_framerate_time / 200000.0f; i++)
+		//				win->get_dino().animate();
+		//		}
+		//		else {
+		//			dino_animation_clock.restart();
+		//			win->get_dino().animate();
+		//		}
+		//	}
+		//	if (scores_add_clock.getElapsedTime().asMicroseconds() > 50000.0f) {
+		//		scores_add_clock.restart();
+		//		win->get_scores_counter().add_to_scores(1);
+		//	}
+		//	if (!dino_jump_flag&&dino_jump_clock.getElapsedTime().asMicroseconds()>= 16500.0f) {
+		//		if (measuring_framerate_time > 16500.0f) {
+		//			dino_jump_clock.restart();
+		//			for (int i = 0; i < measuring_framerate_time / 16500.0f; i++) {
+		//				win->get_dino().set_stage(1);
+		//				dino_jump_flag = win->get_dino().jump();
+		//			}
+		//		}
+		//		else {
+		//			dino_jump_clock.restart();
+		//			win->get_dino().set_stage(1);
+		//			dino_jump_flag = win->get_dino().jump();
+		//		}
+		//	}
+		//	if (win->get_scores_counter().get_scores() % (help_counter_for_changing_colors * rand_int_number(DOWN_COLOR_CHANGING_BOUND, UP_COLOR_CHANGING_BOUND)) == 0 && win->get_scores_counter().get_scores() != 0) {
+		//		color_change_flag = false;
+		//		if (help_counter_for_changing_colors != 1)
+		//			to_vice_versa(&first_color2, &second_color2);
+		//		help_counter_for_changing_colors++;
+		//	}
+		//	if (!color_change_flag) {
+		//		color_change_flag = change_color(&first_color1, first_color2, &second_color1, second_color2, COLOR_CHANGING_SPEED);
+		//		win->set_first_color(sf::Vector3f(first_color1, first_color1, first_color1));
+		//		win->set_second_color(sf::Vector3f(second_color1, second_color1, second_color1));
+		//	}
+		//	//collisions
+		//	if (win->check_collision(win->get_dino().get_dino_part(0), collision_between_objects)) {
+		//		fail_sound.play();
+		//		return true;
+		//	}
+		//	window->clear(sf::Color::Blue);
+		//	win->draw_background(window);
+		//	win->draw(window);
+		//	window->display();
+		//	std::cout << "Framerate time: " << measuring_framerate_time << std::endl;
+		//	measuring_framerate_time = measuring_framerate_time_clock.getElapsedTime().asMicroseconds();
+		//}
